@@ -19,7 +19,7 @@
             android:layout_height="100dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="15dp"
-            android:src="@drawable/logo1" />
+            android:src="@mipmap/logo" />
 
         <EditText
             android:id="@+id/login_emailId"

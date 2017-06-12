@@ -2,6 +2,7 @@ package com.shopkart.theinvincible.shopkart;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Patterns;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,40 +38,49 @@ public class LogIn extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_log_in, container, false);
-        LoginEmailId = (EditText) container.findViewById(R.id.login_emailId);
-        LoginPassword = (EditText) container.findViewById(R.id.login_password);
-        LoginButton = (Button) container.findViewById(R.id.login_button);
+        LoginEmailId = (EditText) view.findViewById(R.id.login_emailId);
+        LoginPassword = (EditText) view.findViewById(R.id.login_password);
+        LoginButton = (Button) view.findViewById(R.id.login_button);
         LoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                register();
+                Register();
             }
         });
         return view;
     }
 
-    private void register() {
+    private void Register() {
         intialize();
 
-        if (!LogInFail()){
-            Toast.makeText(getActivity(),"fdfdf",Toast.LENGTH_SHORT).show();
+        if (!LogInFail()) {
+            Toast.makeText(getActivity(), "LogIn Failed! || Try Again", Toast.LENGTH_SHORT).show();
+        } else {
+            LogInOk();
         }
     }
 
+    private void LogInOk() {
+
+    }
+
     private boolean LogInFail() {
-        boolean validation=true;
-
-
+        boolean validation = true;
+        if (EmailId.isEmpty() || !Patterns.EMAIL_ADDRESS.matcher(EmailId).matches()) {
+            LoginEmailId.setError("Enter Valid Email-Id");
+            validation = false;
+        }
+        if (Password.isEmpty()) {
+            LoginPassword.setError("Enter Valid Password");
+            validation = false;
+        }
         return validation;
     }
 
     private void intialize() {
-        EmailId=LoginEmailId.getText().toString().trim();
-        Password=LoginPassword.getText().toString().trim();
+        EmailId = LoginEmailId.getText().toString().trim();
+        Password = LoginPassword.getText().toString().trim();
 
     }
-
-
 }
