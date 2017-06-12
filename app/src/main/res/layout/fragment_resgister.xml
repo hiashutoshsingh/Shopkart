@@ -1,0 +1,68 @@
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#5ebad9"
+    android:orientation="vertical"
+    tools:context="com.shopkart.theinvincible.shopkart.Register">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/logo1" />
+
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="30dp"
+            android:background="#f3f3f3"
+            android:hint="Username"
+            android:paddingLeft="5dp"
+            android:textColor="#f3f3f3" />
+
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="15dp"
+            android:background="#f3f3f3"
+            android:hint="E-mail id"
+            android:paddingLeft="5dp" />
+
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="15dp"
+            android:background="#f3f3f3"
+            android:hint="Phone No."
+            android:paddingLeft="5dp" />
+
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="15dp"
+            android:background="#f3f3f3"
+            android:hint="password"
+            android:paddingLeft="5dp" />
+
+        <Button
+            android:layout_width="190dp"
+            android:layout_height="38dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:background="#13b586"
+            android:text="Log In"
+            android:textColor="#fff" />
+
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>

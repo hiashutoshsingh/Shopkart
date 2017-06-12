@@ -2,6 +2,7 @@ package com.shopkart.theinvincible.shopkart;
 
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity
 
     ViewPager imageSliderViewPager;
     LinearLayout sliderDotspanel;
+    FragmentManager fragmentManager = getSupportFragmentManager();
     private int dotscount;
     private ImageView[] dots;
 
@@ -47,7 +49,7 @@ public class MainActivity extends AppCompatActivity
         imageSliderViewPager.setAdapter(imageSliderAdapter);
 
         Timer timer = new Timer();
-        timer.scheduleAtFixedRate(new AutoSlider(), 2000, 5000);
+        timer.scheduleAtFixedRate(new AutoSlider(), 2000, 4000);
 
         dotscount = imageSliderAdapter.getCount();
         dots = new ImageView[dotscount];
@@ -107,6 +109,7 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_camera) {
+            fragmentManager.beginTransaction().replace(R.id.content_frame,new Register()).commit();
         } else if (id == R.id.nav_gallery) {
 
         } else if (id == R.id.nav_slideshow) {
