@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 /**
  * Created by H.P on 11-Jun-17.
@@ -16,7 +17,7 @@ public class ImageSliderAdapter extends PagerAdapter {
 
     private Context context;
     private LayoutInflater layoutInflater;
-    private Integer[] imagesSlide = {R.drawable.im, R.drawable.sports_category, R.drawable.shopkey};
+    private Integer[] imagesSlide = {R.drawable.kids_category, R.drawable.kids_category, R.drawable.kids_category};
 
     public ImageSliderAdapter(Context context) {
         this.context = context;
@@ -33,13 +34,26 @@ public class ImageSliderAdapter extends PagerAdapter {
     }
 
     @Override
-    public Object instantiateItem(ViewGroup container, int position) {
+    public Object instantiateItem(ViewGroup container, final int position) {
         layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View view = layoutInflater.inflate(R.layout.sliderimagelayout, container, false);
         ImageView imageView = (ImageView) view.findViewById(R.id.id_imageViewSlider);
         imageView.setImageResource(imagesSlide[position]);
-        ViewPager viewPager = (ViewPager) container;
-        viewPager.addView(viewPager, 0);
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (position == 0) {
+                    Toast.makeText(context, "Slide 1 Clicked", Toast.LENGTH_SHORT).show();
+                } else if (position == 1) {
+                    Toast.makeText(context, "Slide 2 Clicked", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(context, "Slide 3 Clicked", Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        });
+        container.addView(view);
         return view;
     }
 

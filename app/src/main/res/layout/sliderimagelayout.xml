@@ -5,6 +5,8 @@
     android:orientation="vertical">
 
     <ImageView
+        android:scaleType="fitXY"
+        android:src="@mipmap/ic_launcher_round"
         android:id="@+id/id_imageViewSlider"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
