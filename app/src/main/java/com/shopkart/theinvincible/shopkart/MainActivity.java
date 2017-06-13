@@ -109,7 +109,7 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_camera) {
-            fragmentManager.beginTransaction().replace(R.id.content_frame,new LogIn()).commit();
+            fragmentManager.beginTransaction().replace(R.id.content_frame,new Register()).commit();
         } else if (id == R.id.nav_gallery) {
 
         } else if (id == R.id.nav_slideshow) {

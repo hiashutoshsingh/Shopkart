@@ -45,27 +45,27 @@ public class LogIn extends Fragment {
         LoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Register();
+                Login();
             }
         });
         return view;
     }
 
-    private void Register() {
+    private void Login() {
         intialize();
 
-        if (!LogInFail()) {
+        if (!loginfail()) {
             Toast.makeText(getActivity(), "LogIn Failed! || Try Again", Toast.LENGTH_SHORT).show();
         } else {
-            LogInOk();
+            loginok();
         }
     }
 
-    private void LogInOk() {
-
+    private void loginok() {
+        Toast.makeText(getActivity(), "Welcome to Shopkart", Toast.LENGTH_SHORT);
     }
 
-    private boolean LogInFail() {
+    private boolean loginfail() {
         boolean validation = true;
         if (EmailId.isEmpty() || !Patterns.EMAIL_ADDRESS.matcher(EmailId).matches()) {
             LoginEmailId.setError("Enter Valid Email-Id");

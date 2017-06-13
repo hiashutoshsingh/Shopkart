@@ -23,46 +23,58 @@
             android:src="@drawable/logo1" />
 
         <EditText
+            android:id="@+id/RegUsername"
             android:layout_width="fill_parent"
             android:layout_height="40dp"
             android:layout_marginTop="30dp"
             android:background="#f3f3f3"
             android:hint="Username"
+            android:inputType="textPersonName"
             android:paddingLeft="5dp"
-            android:textColor="#f3f3f3" />
+            android:textColor="#000000" />
 
         <EditText
+            android:id="@+id/RegEmailId"
             android:layout_width="fill_parent"
             android:layout_height="40dp"
             android:layout_marginTop="15dp"
             android:background="#f3f3f3"
             android:hint="E-mail id"
-            android:paddingLeft="5dp" />
+            android:inputType="textEmailAddress"
+            android:paddingLeft="5dp"
+            android:textColor="#000000" />
 
         <EditText
+            android:id="@+id/RegPhoneNo"
             android:layout_width="fill_parent"
             android:layout_height="40dp"
             android:layout_marginTop="15dp"
             android:background="#f3f3f3"
             android:hint="Phone No."
-            android:paddingLeft="5dp" />
+            android:inputType="phone"
+            android:paddingLeft="5dp"
+            android:textColor="#000000" />
 
         <EditText
+            android:id="@+id/RegPassword"
             android:layout_width="fill_parent"
             android:layout_height="40dp"
             android:layout_marginTop="15dp"
             android:background="#f3f3f3"
             android:hint="password"
-            android:paddingLeft="5dp" />
+            android:inputType="textPassword"
+            android:paddingLeft="5dp"
+            android:textColor="#000000" />
 
         <Button
+            android:id="@+id/Register"
             android:layout_width="190dp"
             android:layout_height="38dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="16dp"
             android:background="#13b586"
             android:text="Log In"
-            android:textColor="#fff" />
+            android:textColor="#ffffff" />
 
     </LinearLayout>
 </android.support.v4.widget.NestedScrollView>
