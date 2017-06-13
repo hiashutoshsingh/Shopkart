@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 
 /**
@@ -50,37 +51,46 @@ public class Register extends Fragment {
     }
 
     private void Register() {
+        initialize();
 
+        if (!registerfail()) {
+            Toast.makeText(getActivity(), "Registration failed! || Try Again", Toast.LENGTH_SHORT).show();
+        } else {
+            registerok();
+        }
+    }
+
+    private void registerok() {
+        Toast.makeText(getActivity(), "Welcome " + Username, Toast.LENGTH_SHORT).show();
+    }
+
+    private boolean registerfail() {
+        boolean validation = true;
+        if (Username.isEmpty() || Username.length() > 25) {
+            RegUsername.setError("Invalid username");
+            validation = false;
+        }
+        if (EmailId.isEmpty() || !Patterns.EMAIL_ADDRESS.matcher(EmailId).matches()) {
+            RegEmailId.setError("Invalid EmailId");
+            validation = false;
+        }
+        if (PhoneNo.isEmpty() || PhoneNo.length() == 10) {
+            RegPhoneNo.setError("Invalid PhoneNo.");
+            validation = false;
+        }
+        if (Password.isEmpty() || Password.length() > 6) {
+            RegPassword.setError("Invalid Password");
+            validation = false;
+        }
+        return validation;
+    }
+
+    private void initialize() {
         Username = RegUsername.getText().toString().trim();
         EmailId = RegEmailId.getText().toString().trim();
         PhoneNo = RegPhoneNo.getText().toString().trim();
         Password = RegPassword.getText().toString().trim();
 
-        if (Username.isEmpty() || Username.length() > 30) {
-            RegUsername.setError("Invalid username");
-            RegUsername.requestFocus();
-        }
-        if (EmailId.isEmpty() || !Patterns.EMAIL_ADDRESS.matcher(EmailId).matches()) {
-            RegEmailId.setError("Invalid EmailId");
-            RegEmailId.requestFocus();
-        }
-        if (PhoneNo.isEmpty()) {
-            RegPhoneNo.setError("Invalid PhoneNo.");
-            RegPhoneNo.requestFocus();
-        }
-        if (Password.isEmpty()) {
-            RegPassword.setError("Invalid Password");
-            RegPassword.requestFocus();
-        }
-        if (!EmailId.equals("") &&
-                RegPassword.getText().toString().length() >= 6 &&
-                !RegPassword.getText().toString().trim().equals("")
-                && android.util.Patterns.EMAIL_ADDRESS.matcher(EmailId).matches() &&
-                !RegPhoneNo.getText().toString().equals("") &&
-                RegPhoneNo.getText().toString().length() >= 10) {
-// do  your action
-        }
     }
-
 
 }

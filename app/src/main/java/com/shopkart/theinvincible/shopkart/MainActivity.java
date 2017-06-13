@@ -1,5 +1,6 @@
 package com.shopkart.theinvincible.shopkart;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentManager;
@@ -109,8 +110,12 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_camera) {
-            fragmentManager.beginTransaction().replace(R.id.content_frame,new Register()).commit();
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+
         } else if (id == R.id.nav_gallery) {
+
+            fragmentManager.beginTransaction().replace(R.id.content_frame, new Register()).commit();
 
         } else if (id == R.id.nav_slideshow) {
 
