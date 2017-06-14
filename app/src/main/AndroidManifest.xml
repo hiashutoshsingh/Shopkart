@@ -26,6 +26,10 @@
         <activity
             android:name=".WomenCategory"
             android:label="@string/title_activity_women_category"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".MenCategory"
+            android:label="@string/title_activity_men_category"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
