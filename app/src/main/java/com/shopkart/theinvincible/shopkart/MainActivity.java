@@ -118,6 +118,8 @@ public class MainActivity extends AppCompatActivity
             fragmentManager.beginTransaction().replace(R.id.content_frame, new Register()).commit();
 
         } else if (id == R.id.nav_slideshow) {
+            Intent intent = new Intent(this, WomenCategory.class);
+            startActivity(intent);
 
         } else if (id == R.id.nav_manage) {
 
