@@ -110,17 +110,7 @@ public class WomenJewellery extends Fragment {
             }
         }
 
-        public class WomenItem {
-            public String mitemName;
-            public String mitemPrice;
-            public int mitemImage;
 
-            public WomenItem(String mitemName, String mitemPrice, int mitemImage) {
-                this.mitemPrice = mitemPrice;
-                this.mitemName = mitemName;
-                this.mitemImage = mitemImage;
-            }
-        }
 
 
     }
